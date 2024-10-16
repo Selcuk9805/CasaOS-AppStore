@@ -1,0 +1,56 @@
+name: technitium_dns
+services:
+  dns-server:
+    cpu_shares: 90
+    command: []
+    container_name: dns-server
+    deploy:
+      resources:
+        limits:
+          memory: 3880M
+    environment:
+      - DNS_SERVER_DOMAIN=dns-server
+    hostname: dns-server
+    image: technitium/dns-server:latest
+    labels:
+      icon: https://camo.githubusercontent.com/957659b80f5e7552f7d75e705e19ea0452f7c419c5a8bccec5ed9fade2f5d3de/68747470733a2f2f746563686e697469756d2e636f6d2f696d672f6c6f676f2e706e67
+    ports:
+      - target: 5380
+        published: "5380"
+        protocol: tcp
+      - target: 53
+        published: "53"
+        protocol: udp
+      - target: 53
+        published: "53"
+        protocol: tcp
+    restart: unless-stopped
+    sysctls:
+      net.ipv4.ip_local_port_range: 1024 65000
+    volumes:
+      - type: bind
+        source: /DATA/AppData/technitium-dns-server
+        target: /etc/dns
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  author: selcuk9805
+  category: Network
+  hostname: ""
+  icon: https://camo.githubusercontent.com/957659b80f5e7552f7d75e705e19ea0452f7c419c5a8bccec5ed9fade2f5d3de/68747470733a2f2f746563686e697469756d2e636f6d2f696d672f6c6f676f2e706e67
+  index: /
+  thumbnail: {BOŞ}
+  tagline:
+    en-us: Technitium DNS Server is lightweight, open source and fully customizable DNS server. 
+  is_uncontrolled: false
+  port_map: "5380"
+  scheme: http
+  store_app_id: technitium_dns
+  title:
+    custom: Technitium DNS Server
