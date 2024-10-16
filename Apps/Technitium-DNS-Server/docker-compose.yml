@@ -40,12 +40,12 @@ x-casaos:
     - amd64
     - arm64
     - arm
+  main: technitium_dns
   author: selcuk9805
   category: Network
-  hostname: ""
   icon: https://camo.githubusercontent.com/957659b80f5e7552f7d75e705e19ea0452f7c419c5a8bccec5ed9fade2f5d3de/68747470733a2f2f746563686e697469756d2e636f6d2f696d672f6c6f676f2e706e67
   index: /
-  thumbnail: {BOŞ}
+  thumbnail: https://technitium.com/dns/ScreenShot1.png
   tagline:
     en-us: Technitium DNS Server is lightweight, open source and fully customizable DNS server. 
   is_uncontrolled: false
@@ -53,4 +53,4 @@ x-casaos:
   scheme: http
   store_app_id: technitium_dns
   title:
-    custom: Technitium DNS Server
+    en-us: Technitium DNS Server
