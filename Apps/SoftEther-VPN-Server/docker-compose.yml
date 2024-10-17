@@ -11,7 +11,7 @@ services:
         limits:
           memory: 960M
     hostname: softether
-    image: softethervpn/vpnserver:stable
+    image: softethervpn/vpnserver:5.02.5185
     labels:
       icon: https://fineproxy.org/wp-content/uploads/2023/09/SoftEther-logo.png
     ports:
@@ -66,8 +66,6 @@ services:
 x-casaos:
   architectures:
     - amd64
-    - arm64
-    - arm
   main: softether_vpn
   author: selcuk9805
   category: Network
