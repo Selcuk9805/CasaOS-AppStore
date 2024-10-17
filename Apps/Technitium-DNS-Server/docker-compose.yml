@@ -21,6 +21,9 @@ services:
       - target: 53
         published: "53"
         protocol: tcp
+      - target: 853
+        published: "853"
+        protocol: tcp
     restart: unless-stopped
     sysctls:
       net.ipv4.ip_local_port_range: 1024 65000
@@ -49,6 +52,9 @@ services:
         - container: "53"
           description:
             en_us: DNS Listen Port UDP
+        - container: "853"
+          description:
+            en_us: DNS over TLS Port
       volumes:
         - container: /etc/dns
           description:
@@ -70,6 +76,7 @@ x-casaos:
   screenshot_link:
     - https://technitium.com/dns/ScreenShot1.png
     - https://technitium.com/dns/ScreenShot2.png
+    - https://technitium.com/dns/ScreenShot3.png
   tagline:
     en_us: Technitium DNS Server is lightweight, open source and fully customizable DNS server.
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/thumbnail.png
