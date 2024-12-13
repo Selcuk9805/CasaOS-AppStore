@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: technitium/dns-server:13.0.2
+    image: technitium/dns-server:13.2.2
     deploy:
       resources:
         reservations:

@@ -15,30 +15,14 @@ services:
     labels:
       icon: https://fineproxy.org/wp-content/uploads/2023/09/SoftEther-logo.png
     ports:
-      - target: 53
-        published: "53"
-        protocol: tcp
-      - target: 443
-        published: "443"
-        protocol: tcp
-      - target: 992
-        published: "992"
-        protocol: tcp
-      - target: 1194
-        published: "1194"
-        protocol: udp
-      - target: 5555
-        published: "5555"
-        protocol: tcp
-      - target: 500
-        published: "500"
-        protocol: udp
-      - target: 4500
-        published: "4500"
-        protocol: udp
-      - target: 1701
-        published: "1701"
-        protocol: udp
+      - 53:53
+      - 444:443
+      - 992:992
+      - 1194:1194/udp
+      - 5555:5555
+      - 500:500/udp
+      - 4500:4500/udp
+      - 1701:1701/udp
     restart: always
     volumes:
       - type: bind
